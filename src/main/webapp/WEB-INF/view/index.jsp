@@ -38,13 +38,7 @@
 </div>
 </div>
 </div>
-<!--  -->
 
-<div class="container">
-
-</div>
-
-<!--  -->
 
 <nav class="navbar-default ">
 <div class="container top_bar">
@@ -62,12 +56,14 @@
           
   <ul class="nav navbar-nav">        
 <li class=""><a href="index" >Home</a></li>
+<!--  
 <li ><a href="Login" >Login</a></li>
 <li>
 <c:if test="${not empty loginMessage}"> 
 <a href="logout">Logout </a><br>
 </c:if>
 </li>
+-->
 <li><a href="Registration" >Registration</a></li>
 <li><a href="#" >About us</a></li>
 <li><a href="Contact">Contact</a></li>
@@ -124,16 +120,16 @@
   <li><a href="#" >Category</a></li>
   <li><a href="Product" >Electronic</a></li>
   <li> <a href="#" >Cloth</a></li>
-  <li> <a href="#" >Cloth</a></li>
-  <li> <a href="#" >Cloth</a></li>
-  <li> <a href="#" >Cloth</a></li>
+  <li> <a href="#" >Book</a></li>
+  <li> <a href="#" >Kids</a></li>
+  <li> <a href="#" >Grocery</a></li>
   </ul>
   
   
   
     <form class="navbar-form navbar-right">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search" autofocus>
+              <input type="text" class="form-control" placeholder="Search">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
@@ -141,6 +137,12 @@
   
   
   </div>
+  
+   <ul class="nav navbar-nav navbar-right" >
+       <c:if test="${not empty loginMessage }"><li><a href="logout" style=" color:#fff;">Logout</a></li></c:if>
+      <li><a href="Registration" style=" color:#fff;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="Login" style=" color:#fff;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
  </div>
 </div>
 </div>
@@ -149,7 +151,7 @@
 <!-- ================================================================ -->
 
 
-<jsp:include page="../HomeStyle/SideMenu.jsp"></jsp:include>
+
 
 
 
@@ -158,8 +160,9 @@
 
 <div class="text-center ">
 <h1 class="text-success"> This is Shopping Cart Site</h1>
-<p class="text-danger"> you need to create account first,than use this site.</p>
-<div class="text-success text-center">${msg} ${role}</div>
+
+<div class="text-success text-center">${msg}${message} </div>
+${role}
 ${loginMessage}
 ${errorMessage}
 
@@ -168,20 +171,21 @@ ${errorMessage}
 <!--  -->
 <c:if test="${empty loginMessage}">
 </c:if>
-<!--   -->
+<!--  -->
 
 
 
 
 
 
+
+<c:if test="${isAdmin == true }"><jsp:include page="Admin/AdminHome.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedContact==true }"><jsp:include page="Contact.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedLogin==true}"><jsp:include page="Login.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedRegistration==true}"><jsp:include page="Registration.jsp"></jsp:include></c:if>
 <c:if test ="${not empty errorMessage }"><jsp:include page="Login.jsp"></jsp:include></c:if>
-
 <c:if test="${isUserClickedMenu==true }"><jsp:include page="Menu.jsp"></jsp:include></c:if>
-<c:if test="${isUserClickedProduct==true }"><jsp:include page="Product.jsp"></jsp:include></c:if>
+<c:if test="${isUserClickedCategories==true}"><jsp:include page="Admin/Category.jsp"></jsp:include></c:if>
 
 
 
@@ -191,22 +195,16 @@ ${errorMessage}
 
 
 
-
-
+<!--  
 <c:if test="${not empty loginMessage}"> 
 <a href="logout">Logout </a><br>
 </c:if>
-
-
-
-
-
 
 <c:if test="${not empty errorMessage}"> 
 <a href="Login.jsp">login </a><br>
 
 </c:if>
-
+-->
 
 
 

@@ -18,6 +18,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="container">
 
   <form action="validate" method ="post">
     <div class="form-group">
@@ -35,6 +36,6 @@
     <button type="reset" class="btn btn-default">RESET</button>
     </div>
   </form>
-
+</div>
 </body>
 </html>

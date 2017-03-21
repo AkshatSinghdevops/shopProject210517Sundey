@@ -22,7 +22,7 @@ public class homeController {
 	@Autowired
 	private User user;
 	
-	@RequestMapping(value={ ("/") ,("/index") })
+	@RequestMapping("/")
 	public ModelAndView showHomePage()
 	{
 		
@@ -39,7 +39,7 @@ public class homeController {
 	public ModelAndView showLoginPage()
 	{
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("msg", " Hey Hello Brother , WELCOME TO LOGIN PAGE");
+		mv.addObject("msg", " Home Page");
 		mv.addObject("isUserClickedLogin","true");
 		return mv;
 	}
@@ -48,7 +48,7 @@ public class homeController {
 	public ModelAndView showRegistrationPage()
 	{
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("msg", " Now you enter the register page , WELCOME TO Registration page ");
+		mv.addObject("msg", " WELCOME TO Registration page ");
 		mv.addObject("isUserClickedRegistration","true");
 		return mv;
 	}
@@ -57,7 +57,7 @@ public class homeController {
 	public ModelAndView showContactPage()
 	{
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("msg", " Hey Hello Brother , WELCOME TO LOGIN PAGE");
+		mv.addObject("msg", " WELCOME TO LOGIN PAGE");
 		mv.addObject("isUserClickedContact","true");
 		return mv;
 	}
@@ -65,7 +65,7 @@ public class homeController {
 	public ModelAndView showMenuPage()
 	{
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("msg", " Hey Hello Brother , WELCOME TO LOGIN PAGE");
+		mv.addObject("msg", "  WELCOME TO LOGIN PAGE");
 		mv.addObject("isUserClickedMenu","true");
 		return mv;
 	}
@@ -73,31 +73,32 @@ public class homeController {
 
 	
 	@RequestMapping("/validate")
-	public ModelAndView showValidatePage(@RequestParam("userID") String id , @RequestParam("password") String pwd )
+	public ModelAndView showValidatePage(@RequestParam("userID") String id, @RequestParam("password") String pwd )
 	{
-		//Actually you have get the data from DB
-				//Tempororily  -user->niit password =niit@123
+		
 				
-				ModelAndView mv = new ModelAndView("/index");
+		       ModelAndView mv = new ModelAndView("/index");
 				
 			
 				
-				if( userDAO.validate(id, pwd)==true)
+				if(userDAO.validate(id,pwd)==true)
 				
 				{
 					user = userDAO.getUser(id);
 					
 					if(user.getRole().equals("Role_Admin"))
 					{
-						mv.addObject("role", "Admin");
+						mv.addObject("isAdmin","true");
+						mv.addObject("role","Admin");
 					}
 					else
 					{
-						mv.addObject("role", "User");
+						mv.addObject("isAdmin","false");
+						mv.addObject("role","User");
 					}
 					
 					mv.addObject("successMessage", "Valid Credentials");
-					session.setAttribute("loginMessage", "Welcome :" +id);
+					session.setAttribute("loginMessage", "Welcome :"+id );
 				}
 				else
 				{
