@@ -88,17 +88,17 @@ public class homeController {
 					
 					if(user.getRole().equals("Role_Admin"))
 					{
-						mv.addObject("isAdmin","true");
-						mv.addObject("role","Admin");
+						mv.addObject("isUserAdmin","true");
+						
 					}
 					else
 					{
-						mv.addObject("isAdmin","false");
-						mv.addObject("role","User");
+						mv.addObject("isUserAdmin","false");
+						
 					}
 					
 					mv.addObject("successMessage", "Valid Credentials");
-					session.setAttribute("loginMessage", "Welcome :"+id );
+					session.setAttribute("loginMessage", "Welcome :" + id );
 				}
 				else
 				{
@@ -123,14 +123,7 @@ public class homeController {
 			}
 			
 			
-			@RequestMapping("/Product")
-			public ModelAndView showProductPage()
-			{
-				ModelAndView mv = new ModelAndView("/index");
-				mv.addObject("msg", " Shop now hurry up ");
-				mv.addObject("isUserClickedProduct","true");
-				return mv;
-			}
+			
 			
 			
 			

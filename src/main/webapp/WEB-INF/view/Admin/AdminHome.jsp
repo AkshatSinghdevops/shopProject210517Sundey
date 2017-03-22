@@ -10,14 +10,16 @@
 <body>
 
 
-<h3> Welcome To Admin Page </h3>
+<h3 class="text-danger"> Welcome To Admin Page </h3>
+<hr>
 
-<a href="ManageCategory"> ManageCategory</a>
-<a href="ManageProduct"> ManageProduct</a>
-<a href="ManageSupplier"> ManageSupplier</a>
+<a href="ManageCategory">ManageCategory |</a>
+<a href="ManageProduct">ManageProduct  |</a>
+<a href="ManageSupplier">ManageSupplier</a>
 
 
 <c:if test="${isUserClickedCategories==true}"><jsp:include page="Category.jsp"></jsp:include></c:if>
+<c:if test="${ClickedSupplier==true}"><jsp:include page="Supplier.jsp"></jsp:include></c:if>
 
 
 </body>

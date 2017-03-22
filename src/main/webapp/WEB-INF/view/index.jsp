@@ -159,6 +159,7 @@
 
 
 <div class="text-center ">
+<center>${Entry }</center>
 <h1 class="text-success"> This is Shopping Cart Site</h1>
 
 <div class="text-success text-center">${msg}${message} </div>
@@ -179,14 +180,14 @@ ${errorMessage}
 
 
 
-<c:if test="${isAdmin == true }"><jsp:include page="Admin/AdminHome.jsp"></jsp:include></c:if>
+<c:if test="${isUserAdmin==true }"><jsp:include page="Admin/AdminHome.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedContact==true }"><jsp:include page="Contact.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedLogin==true}"><jsp:include page="Login.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedRegistration==true}"><jsp:include page="Registration.jsp"></jsp:include></c:if>
 <c:if test ="${not empty errorMessage }"><jsp:include page="Login.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedMenu==true }"><jsp:include page="Menu.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedCategories==true}"><jsp:include page="Admin/Category.jsp"></jsp:include></c:if>
-
+<c:if test="${ClickedSupplier==true}"><jsp:include page="Admin/Supplier.jsp"></jsp:include></c:if>
 
 
 

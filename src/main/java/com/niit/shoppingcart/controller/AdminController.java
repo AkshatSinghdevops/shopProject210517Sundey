@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.domain.Category;
+import com.niit.shoppingcart.domain.Supplier;
 
 @Controller
 public class AdminController {
@@ -22,7 +24,13 @@ public class AdminController {
 	@Autowired
 	Category  category;
 	
+	@Autowired
+	SupplierDAO supplierDAO;
 	
+	@Autowired
+	Supplier supplier;
+	
+   	
 	
 	@RequestMapping("/ManageCategory")
 	public ModelAndView manageCategories()
@@ -41,12 +49,17 @@ public class AdminController {
 		
 	}
 	
-	@RequestMapping("/ManageProduct")
-	public ModelAndView manageProduct()
+	@RequestMapping("/ManageSupplier")
+	public ModelAndView manageSupplier()
 	{
-		System.out.println("Manage Products");
+		System.out.println("Manage Suppplier");
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("isUserClickedProduct","true");
+		mv.addObject("ClickedSupplier",true);
+		mv.addObject("Entry","SupplierPage");
+		
+		List<Supplier> supplierList = supplierDAO.list();
+		mv.addObject("supplierList", supplierList);
+		mv.addObject("supplier",supplier);
 		
 		
 		return mv;

@@ -18,10 +18,11 @@
 <h2> <center>	Manage Categories </center> </h2>
 <hr>
 <div class="text-center">
+<p class="text-success"> Create New Category</p>
 <form action="manage_category_create" method="post">
-<input type="text" name="id" placeholder="Category Id"> 
-<input type="text" name="name" placeholder="Category Name"> 
-<input type="text" name="description"  placeholder="Category Description"> 
+<input type="text" name="id" placeholder="CategoryId"> 
+<input type="text" name="name" placeholder="CategoryName"> 
+<input type="text" name="description"  placeholder="CategoryDescription"> 
 <input type="submit" value="Create">
 </form>
 </div>
