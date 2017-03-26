@@ -19,23 +19,39 @@
 </head>
 <body>
 <div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Please sign in</h3>
+					</div>
+					<div class="panel-body">
+						
+							<div class="alert alert-danger">
+								<div class="text-center">
+								Login Here
+							</div></div>
+						
+						<form action="validate" method="post">
+							<fieldset>
+								<div class="form-group">
+									<input class="form-control" placeholder="User Name"
+										 type="text" id="userID" name="userID">
+								</div>
 
-  <form action="validate" method ="post">
-    <div class="form-group">
-    <div class="col-sm-6">
-      <label for="userID"></label>
-      <input type="text" name="userID" class="form-control" id="userID" placeholder="Enter UserId">
-    </div></div>
-    <div class="form-group">
-     <div class="col-sm-6">
-      <label for="password"></label>
-      <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
-    </div></div>
-  <div class="text-center">
-    <button type="submit" class="btn btn-default">Submit</button>
-    <button type="reset" class="btn btn-default">RESET</button>
-    </div>
-  </form>
-</div>
+								<div class="form-group">
+									<input class="form-control" placeholder="Password"  type="password" value="" 
+									 id="password" name ="password">
+								</div>
+
+								<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

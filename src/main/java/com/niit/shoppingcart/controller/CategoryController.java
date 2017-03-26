@@ -10,8 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.domain.Category;
-@Controller
-public class CategoryController {
+  
+
+  @Controller
+  public class CategoryController {
 
 	@Autowired
 	private CategoryDAO categoryDAO;

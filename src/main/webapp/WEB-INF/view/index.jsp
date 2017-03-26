@@ -70,6 +70,7 @@
 
 
 
+
 <li class="dropdown " style="padding:5px;">
   <button type="button" class="btn btn-danger dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    Menu<span class="caret"></span>
@@ -101,7 +102,7 @@
 </div></div>
 </div></nav>
 <!-- -----------------------------------------=================== -->
-<div class ="container-fluid  second_bar" style="background:#808080; solid; padding:20px;" >
+<div class ="container-fluid  second_bar" style="background:#0000ff; solid; padding:20px;" >
 <div class="container">
 <div class="row">
  <div class="col-sm-12">
@@ -114,31 +115,23 @@
  <span class="icon-bar"></span>
  </button>
  </div>
- 
-  <div id="Tnavbar" class="navbar-collapse collapse">
+ <div id="Tnavbar" class="navbar-collapse collapse">
   <ul class="nav navbar-nav ">
-  <li><a href="#" >Category</a></li>
-  <li><a href="Product" >Electronic</a></li>
-  <li> <a href="#" >Cloth</a></li>
-  <li> <a href="#" >Book</a></li>
-  <li> <a href="#" >Kids</a></li>
-  <li> <a href="#" >Grocery</a></li>
+  <li><a href="#" >Home</a></li>
+  <li><a href="Product" >Registration</a></li>
+  <li> <a href="#" >About us</a></li>
+  <li> <a href="#" >Contact</a></li>
   </ul>
-  
-  
-  
-    <form class="navbar-form navbar-right">
+ <form class="navbar-form navbar-right">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-  
-  
-  
-  </div>
-  
-   <ul class="nav navbar-nav navbar-right" >
+          </form></div>
+  <ul class="nav navbar-nav navbar-right" >
+        <button type="button" class="btn btn-success dropdown-toggle"  style="margin:8px">
+       <li><a href="Mycart" style="color:#ffff00" class="social_icon" ><i class="fa fa-shopping-cart" aria-hidden="true" style="color:#fff;">My_Cart</i></a></li>
+       </button>
        <c:if test="${not empty loginMessage }"><li><a href="logout" style=" color:#fff;">Logout</a></li></c:if>
       <li><a href="Registration" style=" color:#fff;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="Login" style=" color:#fff;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -164,6 +157,7 @@
 
 <div class="text-success text-center">${msg}${message} </div>
 ${role}
+
 ${loginMessage}
 ${errorMessage}
 

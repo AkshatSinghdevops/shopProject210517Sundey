@@ -3,123 +3,83 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Register here</title>
 </head>
 <body>
+  
+<div class="container">
+	<div class="row">
+		<h2>Create Acount</h2> 
+        
+        
+        
+        <form class="form-horizontal"  action="Registration" method="POST" commandName="user" >
+<fieldset>
 
-<!-- This is form section -->
-<div class ="container text-center">
 
-<!--  
-<div class="text-center">
--->
- 
- <form class="form-horizontal" role="form">
+<legend>Register Here</legend>
 
- <h2> Registration Form</h2>
 
-<!-- this is first row -->
+<div class="form-group">
+  <label class="col-md-4 control-label" path="name"> Name:</label>  
+  <div class="col-md-4">
+  <input path="name" name="name" placeholder="Insert your  Name" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" path="id">User-ID:</label>  
+  <div class="col-md-4">
+  <input path="id" name="id" placeholder="Insert your Id Name" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" path="password">Password:</label>  
+  <div class="col-md-4">
+  <input path="password" name="password" placeholder="Insert your Password" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" path="email">Email:</label>  
+  <div class="col-md-4">
+  <input path="email" name="email" placeholder="Insert your Email" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" path="phone">Phone No:</label>  
+  <div class="col-md-4">
+  <input path="phone" name="phone" placeholder="Insert your Contact" class="form-control input-md" required="" type="text">
+  <span class="help-block"> </span>  
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"> </label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
  
- <div class="from-group">
- <label for="name" class="col-sm-3 control-label">Name:</label>
- <div class="col-sm-9">
- <input type="text" class="form-control" id="name" placeholder="Enter Full Name" autofocus>
- </div>
- </div>
- 
- <!--  End of first row -->
- 
-  <!-- this is first row -->
- 
- <div class="from-group">
- <label for="User" class="col-sm-3 control-label">User Id :</label>
- <div class="col-sm-9">
- <input type="text" class="form-control" id="User" placeholder="Enter User Id " autofocus>
- </div>
- </div>
- 
- <!--  End of first row -->
- 
- <!-- this is first row -->
- 
- <div class="from-group">
- <label for="Email" class="col-sm-3 control-label">Email :</label>
- <div class="col-sm-9">
- <input type="text" class="form-control" id="Email" placeholder="Enter Email" autofocus>
- </div>
- </div>
- 
- <!--  End of first row -->
- 
-  <!-- this is first row -->
- 
- <div class="from-group">
- <label for="password" class="col-sm-3 control-label">Password :</label>
- <div class="col-sm-9">
- <input type="text" class="form-control" id="Email" placeholder="Enter Password" autofocus>
- </div>
- </div>
- 
- <!--  End of first row -->
- 
- <div class="form-group">
-                    <label for="country" class="col-sm-3 control-label">Country :</label>
-                    <div class="col-sm-9">
-                        <select id="country" class="form-control">
-                            <option>Rewa</option>
-                            <option>Bhopal</option>
-                               <option>Indor</option>
-                                  <option>somewhere</option>
-                        </select>
-                    </div>
- </div>
- 
- 
-   <div class="form-group">
-                    <label class="control-label col-sm-3">Gender</label>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" value="Female">Female
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" value="Male">Male
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="uncknownRadio" value="Unknown">Unknown
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-                
-                
-                
-                <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">I accept <a href="#">terms</a>
-                            </label>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-                <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
-                    </div>
-                </div>
-                
-                
- </form></div></div>
- 
- 
+	</div>
+</div>
  
  
  

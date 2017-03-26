@@ -4,7 +4,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -43,15 +47,35 @@ public class homeController {
 		mv.addObject("isUserClickedLogin","true");
 		return mv;
 	}
-
-	@RequestMapping("/Registration")
+	@RequestMapping(value = "/Registration", method = RequestMethod.GET)
 	public ModelAndView showRegistrationPage()
 	{
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("msg", " WELCOME TO Registration page ");
+     	mv.addObject("msg", " WELCOME TO Registration page ");
 		mv.addObject("isUserClickedRegistration","true");
+		mv.addObject("user", user);
+		
+//		if ( !(userDAO.getUser(user.getId() ) == null) ){
+	//		user.setRole("Role_User"); // all the users are end users by default
+		//	userDAO.save(user);
+			
+			//mv.addObject("successMessage", "You are successfully registered");
+	//	} else {
+			
+		//	mv.addObject("errorMessage", "User exist with this id");
+	//	}
 		return mv;
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@RequestMapping("/Contact")
 	public ModelAndView showContactPage()
@@ -59,6 +83,9 @@ public class homeController {
 		ModelAndView mv = new ModelAndView("/index");
 		mv.addObject("msg", " WELCOME TO LOGIN PAGE");
 		mv.addObject("isUserClickedContact","true");
+		
+		
+		
 		return mv;
 	}
 	@RequestMapping("/Menu")
