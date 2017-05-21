@@ -25,7 +25,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" path="name"> Name:</label>  
   <div class="col-md-4">
-  <input path="name" name="name" placeholder="Insert your  Name" class="form-control input-md" required="" type="text">
+  <input path="name" name="name" placeholder="Insert your  Name" class="form-control input-md" required="" type="text" autofocus>
   <span class="help-block"> </span>  
   </div>
 </div>

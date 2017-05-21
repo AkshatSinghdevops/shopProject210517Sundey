@@ -7,9 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<% out.print("Today is : "+ java.util.Calendar.getInstance().getTime()); %>
 
 
-
+<div class="contanier"  class="social_icon">
+<h2>
+<i class="fa fa-cart-arrow-down" aria-hidden="true" >My_Cart</i>
+</h2></div>
 
 
 

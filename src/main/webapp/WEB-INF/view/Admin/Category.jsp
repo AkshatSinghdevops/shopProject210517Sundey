@@ -17,20 +17,58 @@
 <body>
 <h2> <center>	Manage Categories </center> </h2>
 <hr>
+
+
+
+
+<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Create New Category</h3>
+					</div>
+					<div class="panel-body">
+
+
+
+
+
+
 <div class="text-center">
-<p class="text-success"> Create New Category</p>
+<p class="text-success"> Fill the details</p>
 <form action="manage_category_create" method="post">
 <input type="text" name="id" placeholder="CategoryId"> 
 <input type="text" name="name" placeholder="CategoryName"> 
 <input type="text" name="description"  placeholder="CategoryDescription"> 
+<br>
 <input type="submit" value="Create">
 </form>
 </div>
 
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
 <br>
 <h4> Details Of Category </h4>
+<center>
+	<table class="table table-hover">
 
-	<table border="2">
 
 		<thead>
 			<tr>
@@ -52,6 +90,6 @@
 		</c:forEach>
 
 	</table>
-
+</center>
 </body>
 </html>

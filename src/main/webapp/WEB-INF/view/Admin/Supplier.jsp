@@ -20,13 +20,54 @@
 <br>
 
 <div class="contanier-solid text-center">
-<p> You Create a New Supplier</p>
-<from action="#" method="post">
-<input type="text" name="id" placeholder="SupplierId">
-<input type="text" name="name" placeholder="SupplierName">
-<input type="text" name="Address" placeholder="SupplierAddress">
+
+
+
+<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Create New Supplier</h3>
+					</div>
+					<div class="panel-body">
+
+
+
+
+
+
+<div class="text-center">
+<p class="text-success"> Fill the Details</p>
+<form action="manage_supplier_create" method="post">
+<input type="text" name="id" placeholder="Id"> 
+<input type="text" name="name" placeholder="Name"> 
+<input type="text" name="address"  placeholder="Address"> 
+<br>
 <input type="submit" value="Create">
-</from>
+</form>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
 <hr>
 
 <br>
@@ -36,7 +77,7 @@
 
 <div class="container">
 <h3>Details Of Supplier</h3>
-<P> list of Supplier</P>
+
 
 <table class="table">
 <thead>
@@ -54,6 +95,10 @@
 <td>${supplier.id}</td>
 <td>${supplier.name}</td>
 <td>${supplier.address}</td>
+
+<td><a href="<c:url value='/manage_supplier_edit/${category.id}' />">Edit</a></td>
+					
+					<td><a href="<c:url value='/manage_supplier_delete/${category.id}' />">Delete</a></td>
 </tr>
  </c:forEach>
 </tbody>
@@ -61,4 +106,5 @@
 </table>
 </div>
 
-</body></html>
+</body>
+</html>

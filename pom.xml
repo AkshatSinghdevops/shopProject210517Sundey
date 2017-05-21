@@ -8,10 +8,19 @@
   <name>ShoppingCart Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+  
+ 
+  
+  
+ 
+  
+  
+  
   <dependency>
-   <groupId>com.niit</groupId>
+  <groupId>com.niit</groupId>
   <artifactId>ShoppingCartBackend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
   </dependency>
   
   <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->

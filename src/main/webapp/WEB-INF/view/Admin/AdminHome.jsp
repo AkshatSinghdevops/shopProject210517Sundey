@@ -13,13 +13,45 @@
 <h3 class="text-danger"> Welcome To Admin Page </h3>
 <hr>
 
-<a href="ManageCategory">ManageCategory |</a>
-<a href="ManageProduct">ManageProduct  |</a>
-<a href="ManageSupplier">ManageSupplier</a>
+<nav class="navbar-inverse">
+<div class="container">
+<div class="row">
+
+
+
+<ul class="nav navbar-nav">
+
+<li><a href="ManageCategory">ManageCategory</a></li>
+<li><a href="ManageProduct">ManageProduct</a></li>
+<li><a href="ManageSupplier">ManageSupplier</a></li>
+<li><a href="index">Home</a></li>
+
+</ul>
+
+</div></div></nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <c:if test="${isUserClickedCategories==true}"><jsp:include page="Category.jsp"></jsp:include></c:if>
 <c:if test="${ClickedSupplier==true}"><jsp:include page="Supplier.jsp"></jsp:include></c:if>
+<c:if test="${isUserClickedProduct==true}"><jsp:include page="Product.jsp"></jsp:include></c:if>
+<c:if test="${isAdminClickedHome==true}"><jsp:include page="../index.jsp"></jsp:include>     </c:if>
+
+
+
+
 
 
 </body>

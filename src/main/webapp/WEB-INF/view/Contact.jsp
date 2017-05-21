@@ -14,19 +14,40 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+s</head>
 <body>
 
 
-<c:forEach var="category" items="${categoryList}">
-			
-
-				
-				${category.name}
-			
-		</c:forEach>
+<% out.print("Today is:"+java.util.Calendar.getInstance().getTime()); %>  
 
 
+<div class="btn-group">
+    <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Action <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
+</div>
+<div class="btn-group">
+    <button type="button" data-toggle="dropdown" class="btn btn-success dropdown-toggle">Action <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
+</div>
+<div class="btn-group">
+    <button type="button" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">Action <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
+</div>
 
 </body>
 </html>

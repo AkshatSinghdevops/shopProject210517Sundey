@@ -54,59 +54,59 @@
           
           <div class = "collapse navbar-collapse" id ="navbar">
           
-  <ul class="nav navbar-nav">        
-<li class=""><a href="index" >Home</a></li>
-<!--  
-<li ><a href="Login" >Login</a></li>
-<li>
-<c:if test="${not empty loginMessage}"> 
-<a href="logout">Logout </a><br>
-</c:if>
-</li>
--->
-<li><a href="Registration" >Registration</a></li>
-<li><a href="#" >About us</a></li>
-<li><a href="Contact">Contact</a></li>
+ 
+        
+<div class="text-center ">
+<center>${Entry }</center>
 
 
+<div class="text-success text-center">${msg}${message} </div>
+${role}
+<center class="text-danger">${successMessage}</center>
+
+${errorMessage}
 
 
-<li class="dropdown " style="padding:5px;">
-  <button type="button" class="btn btn-danger dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   Menu<span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu"  aria-labelledby="dropdown01">
-    <li><a class="dropdown-item" href="Product">Product</a></li>
-    <li><a class="dropdown-item" href="Supplier">Supplier</a></li>
-   
-    <li class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="Category">Category</a></li>
-  </ul>
-</li>
-<!--  User Message -->
+</div>
 
-<li class="text-center pull-right">
+<div class="text-right" style="margin:10px;">
+
+${loginMessage}
+</div>
+</div>
 
 
-
-
-</li>
-
-
-
-
-
-
-<!--  ===========  -->
-</ul>
-</div></div>
+</div>
 </div></nav>
 <!-- -----------------------------------------=================== -->
 <div class ="container-fluid  second_bar" style="background:#0000ff; solid; padding:20px;" >
 <div class="container">
+
+<!-- ----------- -->
+   
+
+
+ <ul class="nav navbar-nav navbar-right" >
+ <c:if test="${isUserAdmin==false}">
+        <button type="button" class="btn btn-success dropdown-toggle"  style="margin:8px">
+       <li><a href="Mycart" style="color:#ffff00" class="social_icon" ><i class="fa fa-shopping-cart" aria-hidden="true" style="color:#fff;">My_Cart</i></a></li>
+       </button></c:if>
+       
+       
+       <c:if test="${empty loginMessage}">
+      <li><a href="Registration" style=" color:#fff;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="Login" style=" color:#fff;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </c:if>
+      <c:if test="${not empty loginMessage }"><li><a href="logout" style=" color:#fff;">Logout</a></li></c:if>
+    </ul>
+
+
+<!-- ---------- -->
+
+
 <div class="row">
  <div class="col-sm-12">
- <nav class="navbar-default">
+  <nav class="navbar-default"  style="margin:4px;">
  <div class="navbar-header">
  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Tnavbar">
  <span class="icon-bar"></span>
@@ -117,10 +117,10 @@
  </div>
  <div id="Tnavbar" class="navbar-collapse collapse">
   <ul class="nav navbar-nav ">
-  <li><a href="#" >Home</a></li>
-  <li><a href="Product" >Registration</a></li>
-  <li> <a href="#" >About us</a></li>
-  <li> <a href="#" >Contact</a></li>
+  <li><a href="index">Home</a></li>
+  
+  <li> <a href="#" >About-us</a></li>
+  <li> <a href="Contact" >Contact</a></li>
   </ul>
  <form class="navbar-form navbar-right">
             <div class="form-group">
@@ -128,15 +128,24 @@
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form></div>
-  <ul class="nav navbar-nav navbar-right" >
-        <button type="button" class="btn btn-success dropdown-toggle"  style="margin:8px">
-       <li><a href="Mycart" style="color:#ffff00" class="social_icon" ><i class="fa fa-shopping-cart" aria-hidden="true" style="color:#fff;">My_Cart</i></a></li>
-       </button>
-       <c:if test="${not empty loginMessage }"><li><a href="logout" style=" color:#fff;">Logout</a></li></c:if>
-      <li><a href="Registration" style=" color:#fff;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="Login" style=" color:#fff;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
+  
+    <!-- ======================================================================================================================= -->
+    <jsp:include page="Menu.jsp"></jsp:include>
+    <!-- ======================================================================================================================== -->
+    
  </div>
+ 
+ <div class="btn-group">
+    <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Action <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+    </ul>
+</div>
+
+ 
 </div>
 </div>
 </div>
@@ -149,40 +158,29 @@
 
 
 
+<c:if test="${isUserAdmin==true }"><jsp:include page="Admin/AdminHome.jsp"></jsp:include></c:if>
 
 
-<div class="text-center ">
-<center>${Entry }</center>
-<h1 class="text-success"> This is Shopping Cart Site</h1>
-
-<div class="text-success text-center">${msg}${message} </div>
-${role}
-
-${loginMessage}
-${errorMessage}
-
-
-</div>
 <!--  -->
 <c:if test="${empty loginMessage}">
 </c:if>
 <!--  -->
 
+<jsp:include page="Carousel.jsp"></jsp:include>
 
 
 
 
-
-
+<c:if test="${isUsermycart==true }"><jsp:include page="Mycart.jsp"></jsp:include></c:if>
 <c:if test="${isUserAdmin==true }"><jsp:include page="Admin/AdminHome.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedContact==true }"><jsp:include page="Contact.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedLogin==true}"><jsp:include page="Login.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedRegistration==true}"><jsp:include page="Registration.jsp"></jsp:include></c:if>
-<c:if test ="${not empty errorMessage }"><jsp:include page="Login.jsp"></jsp:include></c:if>
+<c:if test="${not empty errorMessage }"><jsp:include page="Login.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedMenu==true }"><jsp:include page="Menu.jsp"></jsp:include></c:if>
 <c:if test="${isUserClickedCategories==true}"><jsp:include page="Admin/Category.jsp"></jsp:include></c:if>
 <c:if test="${ClickedSupplier==true}"><jsp:include page="Admin/Supplier.jsp"></jsp:include></c:if>
-
+<c:if test="${isUserClickedProduct==true}"><jsp:include page="Admin/Product.jsp"></jsp:include></c:if>
 
 
 

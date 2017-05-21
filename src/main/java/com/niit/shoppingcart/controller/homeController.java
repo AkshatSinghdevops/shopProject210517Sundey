@@ -1,5 +1,7 @@
 package com.niit.shoppingcart.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.dao.ProductDAO;
+import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.dao.UserDAO;
+import com.niit.shoppingcart.domain.Category;
+import com.niit.shoppingcart.domain.Product;
+import com.niit.shoppingcart.domain.Supplier;
 import com.niit.shoppingcart.domain.User;
 
 @Controller
@@ -26,16 +34,55 @@ public class homeController {
 	@Autowired
 	private User user;
 	
-	@RequestMapping("/")
+	@Autowired
+	private Category category; 
+	
+	@Autowired
+	private CategoryDAO categoryDAO;;
+	
+	
+	
+	@Autowired
+	private Supplier supplier;
+	
+	@Autowired
+	private SupplierDAO  supplierDAO;
+	
+	@Autowired
+	private Product product;
+	
+	@Autowired
+	private ProductDAO productDAO;
+	
+	
+	
+	@RequestMapping(value={("/"),("/index")})
 	public ModelAndView showHomePage()
 	{
 		
 		//Specifying which page you have navigateion
 		ModelAndView mv = new ModelAndView("/index");
 		
+		 List<Category> categoryList=	categoryDAO.list();
+		  mv.addObject("categoryList", categoryList);
+		  mv.addObject("category", category);//To access category domain object in category.jsp
+		  
+		  List<Supplier> supplierList  = supplierDAO.list();
+			mv.addObject("supplierList" , supplierList);
+			mv.addObject("supplier" , supplier);
+			
+		 List<Product> productList =  productDAO.list();
+			 mv.addObject("productList",productList);
+			 mv.addObject("product",product);
+		//Specify what data you have to carry to home page
+		
 		//Specify what data you have to carry to home page
 		
 		mv.addObject("msg", "WELCOME TO SHOPPING CART");
+		
+		
+		
+		
 		
 		return mv;
 	}
@@ -43,7 +90,7 @@ public class homeController {
 	public ModelAndView showLoginPage()
 	{
 		ModelAndView mv = new ModelAndView("/index");
-		mv.addObject("msg", " Home Page");
+		mv.addObject("msg", "Welcome to Home Page");
 		mv.addObject("isUserClickedLogin","true");
 		return mv;
 	}
@@ -124,7 +171,7 @@ public class homeController {
 						
 					}
 					
-					mv.addObject("successMessage", "Valid Credentials");
+					mv.addObject("successMessage", " Access Granted Valid Credentials");
 					session.setAttribute("loginMessage", "Welcome :" + id );
 				}
 				else
@@ -151,12 +198,15 @@ public class homeController {
 			
 			
 			
+			@RequestMapping("/Mycart")
+			public ModelAndView mycart()
+			{
+				ModelAndView mv =new ModelAndView("/index");	
+				mv.addObject("isUsermycart","true");
+				return mv;
 			
 			
-			
-			
-			
-			
+			}
 			
 			
 			
